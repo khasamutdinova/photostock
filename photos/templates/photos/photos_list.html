@@ -1,0 +1,16 @@
+{% block content %}
+    {% for product in category.product_set.all %}
+        <div class="product">
+            <div class="title"
+                <a href="#">{{ product.name }}</a>
+            </div>
+        </div>
+        <div class="productImg">
+            <a href="#">
+                {% for prodimg in product.prodimg.all %}
+                    <img src="{{ prodimg.img.url }}" alt="продукт">
+                {% endfor %}
+            </a>
+        </div>
+    {% endfor %}
+{% endblock %}
